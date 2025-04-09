@@ -1,0 +1,93 @@
+.header {
+    background: #ffffff;
+    height: 71px;
+    top: 16px;
+    left: 1505px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    color: #ec87ef;
+}
+
+.dashboard-menu {
+    display: flex;
+    gap: 12px;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #cdcdcd;
+    background: #f7f7f7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.menu-button:hover {
+    background: #f0f0f0;
+}
+
+.menu-button .icon {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.menu-button {
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-button:visited {
+    color: #333;
+}
+
+body {
+    background: #f9f9f9;
+}
+
+.custom-btn {
+    width: 200px;
+    border-radius: 12px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.custom-btn.primary {
+    background: linear-gradient(90deg, #a3a6e1 0%, #ffabd9 100%);
+}
+
+.custom-btn.primary:hover {
+    background: linear-gradient(90deg, #ffabd9 0%, #a3a6e1 100%);
+}
+
+.custom-btn.back {
+    background: #e0dfde;
+    color: #333;
+}
+
+.custom-btn.back:hover {
+    background: #d0cfcd;
+}

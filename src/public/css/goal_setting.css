@@ -1,0 +1,80 @@
+body {
+    background: #f5f5f5;
+}
+
+.goal-setting-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.goal-setting-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.goal-setting-card h2 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.unit {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+}
+
+/* ボタン */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-back {
+    background: #e0dfde;
+    color: #333;
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, #a3a6e1 0%, #ffabd9 100%);
+    color: white;
+}
