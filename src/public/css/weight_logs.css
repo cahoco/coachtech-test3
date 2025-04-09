@@ -91,3 +91,9 @@ body {
 .custom-btn.back:hover {
     background: #d0cfcd;
 }
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}

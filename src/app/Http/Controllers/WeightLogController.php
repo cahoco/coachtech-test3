@@ -6,6 +6,7 @@ use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\WeightLogRequest;
+use App\Http\Requests\GoalSettingRequest;
 use Illuminate\Http\Request;
 
 class WeightLogController extends Controller
@@ -38,7 +39,7 @@ class WeightLogController extends Controller
             'exercise_time' => $validated['exercise_time'],
             'exercise_content' => $validated['exercise_content'] ?? null,
         ]);
-        return redirect('/weight_logs?modal=open')
+        return redirect('/weight_logs')
             ->with('success', '体重ログを追加しました！');
     }
 
@@ -67,26 +68,29 @@ class WeightLogController extends Controller
             ->with('success', '体重ログを更新しました');
     }
 
-    public function goalSetting(Request $request)
+    public function showGoalSetting()
+    {
+        $target = Auth::user()->weightTarget;
+        $targetWeight = $target->target_weight ?? null;
+
+        return view('weight_logs.goal_setting', compact('targetWeight'));
+    }
+
+    public function updateGoalSetting(GoalSettingRequest $request)
     {
         $user = Auth::user();
-        if ($request->isMethod('post')) {
-            $request->validate([
-                'target_weight' => ['required', 'numeric', 'between:10,300'],
-            ]);
-            $target = $user->weightTarget;
-            if ($target) {
-                $target->update(['target_weight' => $request->target_weight]);
-            } else {
-                WeightTarget::create([
-                    'user_id' => $user->id,
-                    'target_weight' => $request->target_weight,
-                ]);
-            }
-            return redirect('/weight_logs')->with('success', '目標体重を更新しました！');
-        }
         $target = $user->weightTarget;
-        return view('weight_logs.goal_setting', compact('target'));
+
+        if ($target) {
+            $target->update(['target_weight' => $request->target_weight]);
+        } else {
+            WeightTarget::create([
+                'user_id' => $user->id,
+                'target_weight' => $request->target_weight,
+            ]);
+        }
+
+        return redirect('/weight_logs')->with('success', '目標体重を更新しました！');
     }
 
     public function search(Request $request)
@@ -112,5 +116,12 @@ class WeightLogController extends Controller
         return view('weight_logs.index', compact(
             'logs', 'target', 'latestLog', 'difference', 'start', 'end', 'modal'
         ));
+    }
+
+    public function destroy($id)
+    {
+        $log = WeightLog::where('user_id', Auth::id())->findOrFail($id);
+        $log->delete();
+        return redirect('/weight_logs')->with('success', '体重ログを削除しました。');
     }
 }

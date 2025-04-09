@@ -49,6 +49,15 @@
                 </button>
             </div>
         </form>
+        <div class="delete-button-wrapper">
+            <form method="POST" action="{{ url('/weight_logs/' . $log->id . '/delete') }}" style="display: inline;">
+            @csrf
+            @method('DELETE')
+                <button type="submit" onclick="return confirm('このデータを削除してもよろしいですか？')" style="background: none; border: none;">
+                    <img src="{{ asset('images/icon-trash.png') }}" alt="削除" class="delete-icon-image">
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 @endsection

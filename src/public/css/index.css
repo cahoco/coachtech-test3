@@ -315,12 +315,6 @@ textarea::placeholder {
     color: #cdcdcd;
 }
 
-.error-message {
-    color: red;
-    font-size: 13px;
-    margin-top: 4px;
-}
-
 /* ボタンエリア */
 .button-group {
     display: flex;
@@ -362,4 +356,10 @@ textarea::placeholder {
     font-size: 16px;
     color: #333;
     white-space: nowrap;
+}
+
+.delete-button-wrapper {
+    display: flex;
+    justify-content: right;
+    margin-top: -40px;
 }

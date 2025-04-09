@@ -3,11 +3,11 @@ body {
 }
 
 .goal-setting-wrapper {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    justify-content: center;
+    background-color: #f3f3f3;
 }
 
 .goal-setting-card {
@@ -40,13 +40,27 @@ body {
     box-sizing: border-box;
 }
 
-.unit {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
+.form-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.form-with-unit input {
+    flex: 1;
+    height: 43px;
+    padding: 11px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+.unit {
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
 }
 
 /* ボタン */
