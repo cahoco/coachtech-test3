@@ -4,15 +4,12 @@ Dockerビルド
 ```
 git clone git@github.com:cahoco/coachtech-test3.git
 cd coachtech-test3
+code .
 ```
 DockerDesktopアプリを立ち上げる  
 ```
 docker-compose up -d --build
-```
-mysql:  
-    platform: linux/x86_64(この文追加)  
-    image: mysql:8.0.26  
-    environment:  
+``` 
 Laravel環境構築  
 ```
 docker-compose exec php bash
@@ -21,6 +18,9 @@ docker-compose exec php bash
 composer install
 ```
 「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成  
+```
+cp .env.example .env
+```
 .envに以下の環境変数を追加  
 ```
 DB_CONNECTION=mysql  
@@ -42,6 +42,12 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
+サーバー起動
+```
+php artisan serve
+```
+http://localhost/login  
+をブラウザで開く
 
 テストユーザーログイン情報
 メールアドレス：test@example.com
