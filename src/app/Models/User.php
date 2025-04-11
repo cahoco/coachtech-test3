@@ -26,13 +26,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // リレーション：目標体重（1対1）
     public function weightTarget()
     {
         return $this->hasOne(WeightTarget::class);
     }
 
-    // リレーション：体重ログ（1対多）
     public function weightLogs()
     {
         return $this->hasMany(WeightLog::class);

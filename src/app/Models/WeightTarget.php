@@ -14,7 +14,6 @@ class WeightTarget extends Model
         'target_weight',
     ];
 
-    // ユーザーとのリレーション（逆）
     public function user()
     {
         return $this->belongsTo(User::class);

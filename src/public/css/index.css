@@ -2,7 +2,6 @@ body {
     background: #f9f9f9;
 }
 
-/* ダッシュボードカード3つ横並び */
 .dashboard-cards {
     display: flex;
     justify-content: space-around;
@@ -63,7 +62,7 @@ body {
     padding: 24px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* ← 中央揃えに */
+    align-items: center;
     flex-wrap: nowrap;
     gap: 16px;
     min-height: 90px;
@@ -247,7 +246,6 @@ body {
     background: #f3f3f3;
 }
 
-/* 背景全体 */
 .modal-page {
     position: fixed;
     top: 0;
@@ -255,7 +253,7 @@ body {
     z-index: 9999;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* 背景を暗く */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,7 +313,6 @@ textarea::placeholder {
     color: #cdcdcd;
 }
 
-/* ボタンエリア */
 .button-group {
     display: flex;
     justify-content: space-between;
@@ -328,15 +325,15 @@ textarea::placeholder {
     align-items: center;
     gap: 16px;
     margin-top: 24px;
-    width: 100%; /* ← これを追加！ */
+    width: 100%;
 }
 
 .form-with-unit {
     display: flex;
     align-items: center;
-    gap: 8px; /* 入力と単位の間隔 */
-    width: 100%; /* 400pxのモーダル幅に合わせる */
-    max-width: 100%; /* ★ ここを変更してフォーム幅制限を外す */
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .form-with-unit input {

@@ -1,7 +1,7 @@
 @extends('layouts.weight_logs')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endpush
 
 @section('content')

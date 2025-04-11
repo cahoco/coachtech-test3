@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PiGLy</title>
-        <link rel="stylesheet" href="{{ asset('css/weight_logs.css') }}?v={{ time() }}">
+        <link rel="stylesheet" href="{{ asset('css/weight_logs.css') }}">
         @stack('styles')
     </head>
     <body>

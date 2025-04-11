@@ -43,21 +43,17 @@ class AuthController extends Controller
             'email' => session('register.email'),
             'password' => session('register.password'),
         ]);
-
         WeightTarget::create([
             'user_id' => $user->id,
             'target_weight' => $validated['target_weight'],
         ]);
-
         WeightLog::create([
             'user_id' => $user->id,
             'date' => now()->toDateString(),
             'weight' => $validated['initial_weight'],
         ]);
-
         Auth::login($user);
         session()->forget('register');
-
         return redirect('/weight_logs');
     }
 

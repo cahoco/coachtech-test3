@@ -20,9 +20,7 @@ class WeightLogController extends Controller
         ? round($latestLog->weight - $target->target_weight, 1)
         : null;
     $logs = $user->weightLogs()->orderBy('date', 'desc')->paginate(8);
-
     $modal = $request->query('modal');
-
     return view('weight_logs.index', compact(
         'user', 'latestLog', 'target', 'difference', 'logs', 'modal'
     ));
@@ -72,7 +70,6 @@ class WeightLogController extends Controller
     {
         $target = Auth::user()->weightTarget;
         $targetWeight = $target->target_weight ?? null;
-
         return view('weight_logs.goal_setting', compact('targetWeight'));
     }
 
@@ -80,7 +77,6 @@ class WeightLogController extends Controller
     {
         $user = Auth::user();
         $target = $user->weightTarget;
-
         if ($target) {
             $target->update(['target_weight' => $request->target_weight]);
         } else {
@@ -89,7 +85,6 @@ class WeightLogController extends Controller
                 'target_weight' => $request->target_weight,
             ]);
         }
-
         return redirect('/weight_logs')->with('success', '目標体重を更新しました！');
     }
 
@@ -99,18 +94,15 @@ class WeightLogController extends Controller
         $start = $request->input('start_date');
         $end = $request->input('end_date');
         $query = $user->weightLogs()->orderBy('date', 'desc');
-
         if ($start && $end) {
             $query->whereBetween('date', [$start, $end]);
         }
-
         $logs = $query->paginate(8);
         $target = $user->weightTarget;
         $latestLog = $user->weightLogs()->orderBy('date', 'desc')->first();
         $difference = ($target && $latestLog)
             ? round($latestLog->weight - $target->target_weight, 1)
             : null;
-
         $modal = $request->query('modal');
 
         return view('weight_logs.index', compact(
