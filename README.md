@@ -50,8 +50,8 @@ php artisan serve
 をブラウザで開く
 
 ##### テストユーザーログイン情報
-メールアドレス：test@example.com
-パスワード：0000
+* メールアドレス：test@example.com  
+* パスワード：0000
 
 ## 使用技術(実行環境)
 * PHP 7.4.9
