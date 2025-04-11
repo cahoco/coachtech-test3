@@ -1,16 +1,16 @@
 # PiGLy
 ## 環境構築
-Dockerビルド  
+1. Dockerビルド  
 ```
 git clone git@github.com:cahoco/coachtech-test3.git
 cd coachtech-test3
 code .
 ```
-DockerDesktopアプリを立ち上げる  
+2. DockerDesktopアプリを立ち上げる  
 ```
 docker-compose up -d --build
 ``` 
-Laravel環境構築  
+3. Laravel環境構築  
 ```
 docker-compose exec php bash
 ```
@@ -30,33 +30,34 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user  
 DB_PASSWORD=laravel_pass
 ```
-アプリケーションキーの作成  
+4. アプリケーションキーの作成  
 ```
 php artisan key:generate
 ```
-マイグレーションの実行  
+5. マイグレーションの実行  
 ```
 php artisan migrate
 ```
-シーディングの実行  
+6. シーディングの実行  
 ```
 php artisan db:seed
 ```
-サーバー起動
+7. サーバー起動
 ```
 php artisan serve
 ```
-http://localhost/login  
+8. http://localhost/login  
 をブラウザで開く
 
-テストユーザーログイン情報
+##### テストユーザーログイン情報
 メールアドレス：test@example.com
 パスワード：0000
 
 ## 使用技術(実行環境)
 * PHP 7.4.9
 * Laravel 8.83.8
-* MySQL 15.1
+* MySQL 15.1  
+
 ## ER図
 <img width="534" alt="er_diagram" src="https://github.com/user-attachments/assets/47e7322f-6d76-45ae-8672-e75df4e33ab8" />
 
