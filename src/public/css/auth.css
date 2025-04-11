@@ -151,6 +151,10 @@ input {
     font-size: 16px;
 }
 
+.btn-login:hover {
+    background: linear-gradient(90deg, #ffabd9 0%, #a3a6e1 100%);
+}
+
 .link-area {
     margin-top: 20px;
 }
