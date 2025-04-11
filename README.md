@@ -2,7 +2,7 @@
 ## 環境構築
 Dockerビルド  
 ```
-git clone git@github.com:estra-inc/confirmation-test-contact-form.git
+git clone git@github.com:cahoco/coachtech-test3.git
 ```
 DockerDesktopアプリを立ち上げる  
 ```
