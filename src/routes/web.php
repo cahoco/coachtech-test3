@@ -19,9 +19,6 @@ Route::get('/weight_logs', [WeightLogController::class, 'index'])->middleware('a
 Route::get('/weight_logs/create', [WeightLogController::class, 'create'])->middleware('auth');
 Route::post('/weight_logs/create', [WeightLogController::class, 'store'])->middleware('auth');
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 Route::match(['get', 'post'], '/weight_logs/goal_setting', [WeightLogController::class, 'goalSetting'])->middleware('auth');
@@ -35,3 +32,7 @@ Route::delete('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy'
 
 Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'showGoalSetting'])->middleware('auth');
 Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'updateGoalSetting'])->middleware('auth');
+
+Fortify::loginView(function () {
+    return view('auth.login');
+});
