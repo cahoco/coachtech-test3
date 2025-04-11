@@ -42,9 +42,9 @@ php artisan migrate
 php artisan db:seed
 ```
 ## 使用技術(実行環境)
-* PHP8.3.0
-* Laravel8.83.27
-* MySQL8.0.26
+* PHP 7.4.9
+* Laravel 8.83.8
+* MySQL 15.1
 ## ER図
 <img width="534" alt="er_diagram" src="https://github.com/user-attachments/assets/47e7322f-6d76-45ae-8672-e75df4e33ab8" />
 
