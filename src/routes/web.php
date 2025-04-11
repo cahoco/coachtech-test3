@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WeightLogController;
 use App\Http\Controllers\WeightTargetController;
 use App\Http\Requests\GoalSettingRequest;
+use Laravel\Fortify\Fortify;
 
 Route::get('/register/step1', [AuthController::class, 'showRegisterStep1'])->name('register.step1');
 Route::post('/register/step1', [AuthController::class, 'registerStep1'])->name('register.step1.post');
@@ -32,7 +33,3 @@ Route::delete('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy'
 
 Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'showGoalSetting'])->middleware('auth');
 Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'updateGoalSetting'])->middleware('auth');
-
-Fortify::loginView(function () {
-    return view('auth.login');
-});
