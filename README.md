@@ -3,6 +3,7 @@
 Dockerビルド  
 ```
 git clone git@github.com:cahoco/coachtech-test3.git
+cd coachtech-test3
 ```
 DockerDesktopアプリを立ち上げる  
 ```
